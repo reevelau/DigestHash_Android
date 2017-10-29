@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Calculate Hash</string>
+    <string name="Calculate">Calculate Hash</string>
+
+    <string name="Message">Message :</string>
+    <string name="app_name">MD5Sum</string>
+
+    <string name="btnCopyMd5">MD5</string>
+    <string name="btnCopySha1">Sha1</string>
+    <string name="btnCopySha256">Sha256</string>
+    <string name="btnCopySha384">Sha384</string>
+    <string name="btnCopySha512">Sha512</string>
+
+    <string name="btnClearClipboard">Clear Clipboard</string>
+</resources>
