@@ -26,16 +26,12 @@ namespace DigestHash
 
             UpdateDigest();
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
 
-            button.Click += delegate
-            {
-                button.Text = $"{count++} clicks!";
+            EditText et = FindViewById<EditText>(Resource.Id.etMessage);
 
+            et.AddTextChangedListener(new ActionTextWatcher(null,null,(s, start, before,count)=>{
                 UpdateDigest();
-            };
+            } ));
 
 
             FindViewById<Button>(Resource.Id.btnCopyMd5).Click += (sender, e) => {
@@ -112,7 +108,7 @@ namespace DigestHash
             var hasher = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(alg);
             string hexStr = ByteArrayToString(hasher.HashData(System.Text.UTF8Encoding.UTF8.GetBytes(input)));
 
-            return hexStr;
+            return hexStr.ToLower();
         }
     }
 }
